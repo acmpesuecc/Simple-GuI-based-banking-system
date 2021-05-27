@@ -1,1 +1,1 @@
-# C-lab-sem-2-project-to-impress-a-bunch-of-unhealthy-aunties
+# Simple Bank Application (C Lab Project)
