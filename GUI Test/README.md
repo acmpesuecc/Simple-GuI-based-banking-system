@@ -1,7 +1,5 @@
 ## GTK Installaton Instructions
 
-Steps to install the library:
-
 1. Install the GTK+ Library from the website: [GTK+](https://www.gtk.org/docs/installations/windows/#using-gtk-from-msys2-packages).
 2. Configure VSCode to Build and Debug C GUI programs.
 
