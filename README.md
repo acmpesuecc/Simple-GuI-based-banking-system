@@ -7,9 +7,10 @@ The above project comprises of Account Handling and related transactions such as
 ### Project Objectives
 Functions to add in the project: 
 
-1. [ ] File encryption/decryption
+1. [ ] Project Synopsis
+2. [ ] File encryption/decryption
 
-2. [ ] Storing data in files.
+3. [ ] Storing data in files.
 
    The following must be in the file:
    
@@ -21,7 +22,7 @@ Functions to add in the project:
    6. UPI password
 
 
-3. [ ] Withdraw money.
+4. [ ] Withdraw money.
 
    Options to add:
    
@@ -31,7 +32,7 @@ Functions to add in the project:
    4. UPI
 
 
-4. [ ] Account management
+5. [ ] Account management
    User must be able to:
    1. Change name, password, etc.
-   2. Change for UPI handler/change UPI password
+   2. Change UPI handler/change UPI password
