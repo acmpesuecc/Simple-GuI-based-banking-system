@@ -42,7 +42,7 @@ Please specify at least one package name on the command line.
 
 If these are return errors, then tell me.
 
-After the above commands work, open a MSYS2 MinGW 64-bit shell (`Start → MSYS2 → MSYS2 MinGW 64-bit`) and follow steps on the gtk website. For now step 4 can be ignored. If everything goes well, the gtk library is now installed. 
+After the above commands work, open a MSYS2 MinGW 64-bit shell (`Start → MSYS2 → MSYS2 MinGW 64-bit`) and follow steps on the gtk website: [GTK+](https://www.gtk.org/docs/installations/windows/#using-gtk-from-msys2-packages). For now step 4 can be ignored. If everything goes well, the gtk library is now installed. 
 
 You can test this by running the sample GUI app in the Test GUI folder.
 
