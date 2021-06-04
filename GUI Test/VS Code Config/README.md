@@ -4,7 +4,7 @@
 2. Make a new folder name ".vscode" and add the files from the repo (in folder .vscode above). This folder must be in the root of the repo.
 3. Then in file explorer, on the top, click on `view → Hidden Items`. Now you should see a .git folder.
 4. Go to `.git → info` and open the `exclude` file in Notepad/Notepad++.
-5. Type .vscode in the file and save the file. This will prevent your vscode configurations files from syncing with the repo.
+5. Type .vscode in the end of the file and save the file. This will prevent your vscode configurations files from syncing with the repo.
 
 Your Exclude file must look like below:
 ```
