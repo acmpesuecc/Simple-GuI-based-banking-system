@@ -1,0 +1,22 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: gcc.exe with GTK",
+            "command": "cd '${fileDirname}'\r && cc `pkg-config gtk+-3.0 --cflags` ${fileBasename} -o ${fileBasenameNoExtension} `pkg-config gtk+-3.0 --libs`",
+            "args": [],
+            "options": {
+                "cwd": "(path-to-msys2-location)\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task with GTK libraries for C GUI programs."
+        }   
+    ],
+    "version": "2.0.0"
+}
