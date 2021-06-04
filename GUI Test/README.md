@@ -59,3 +59,6 @@ IF you have some GTK code, then you can build it by following these steps:
 3. Run the command ```gcc `pkg-config --cflags gtk+-3.0` filename.c -o filename `pkg-config --libs gtk+-3.0` ``` . Do not forget to change filename with your filename.
 
 An executable will be made if no errors occur.
+
+## Building in VS code
+Check the VS Code config folder.
