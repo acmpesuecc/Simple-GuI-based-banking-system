@@ -41,4 +41,5 @@ Functions to add in the project:
    Makefile
    
 7. [ ] Project Design
+
    [ ] Reading data from decrypted file (Assigned ro Frail)
