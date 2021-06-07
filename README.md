@@ -8,7 +8,7 @@ The above project comprises of Account Handling and related transactions such as
 Functions to add in the project: 
 
 1. [ ] Project Synopsis
-2. [ ] File encryption/decryption
+2. [ ] File encryption/decryption (Assigned to clouds)
 
 3. [ ] Storing data in files.
 
@@ -22,7 +22,7 @@ Functions to add in the project:
    6. UPI password
 
 
-4. [ ] Withdraw money.
+4. [ ] Withdraw money. 
 
    Options to add:
    
@@ -36,3 +36,9 @@ Functions to add in the project:
    User must be able to:
    1. Change name, password, etc.
    2. Change UPI handler/change UPI password
+
+6. [ ] Project management (not for mini project 1)
+   Makefile
+   
+7. [ ] Project Design
+   [ ] Reading data from decrypted file (Assigned ro Frail)
