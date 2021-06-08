@@ -1,4 +1,10 @@
-For Mini Project 1
+### General Rules
+
+- If anyone is using anything that has not been taught in class, make sure to document in code or document it here.
+- Functions written must be reusable, do not write functions that only work in command-line but do not work with GUI.
+- Place all code in folder 'Mini Project 1'.
+
+### For Mini Project 1
 
 | Objectives                                                                                                                                                                                                                                                | Done? | Assigned to?                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|------------------------------|
