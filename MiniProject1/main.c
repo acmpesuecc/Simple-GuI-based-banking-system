@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<C:\Users\Ashutosh\Desktop\Code for Ashutosh and Clouds\encrypt.h>
 
 
 
@@ -80,6 +81,7 @@ int main(){
             scanf("%s",&password);
             char pass1[12];
             for(int i=0;i<strlen(passcheck)-1;i++)pass1[i]=passcheck[i];
+            decrypt(pass1);
             if(strcmp(password,pass1)==0)printf("succesfull");
             else printf("invalid");
         
@@ -87,9 +89,47 @@ int main(){
     }
     else
     {
+        
+        rename:
         printf("\n---------Welcome to the Sign up page--------\nEnter your username:");
         scanf("%s",&username);
-        //function to check if the username is already taken
+
+            FILE* fp = fopen("user.csv", "r");
+            char buffer[1024];
+    
+            int row = 0;
+            int column = 0;
+    
+            while (fgets(buffer,1024, fp)) 
+            {
+                column = 0;
+                row++;
+
+                //avoid printing 1st row
+                if (row == 1)
+                    continue;
+    
+                // Splitting the data
+                char* value = strtok(buffer, ", ");
+    
+                while (value) 
+                {
+
+                    if(!strcmp(value,username))
+                    {
+                        printf("username already taken");
+                        goto rename;
+                    }
+                    value = strtok(NULL, ", ");
+                    
+                }
+               
+            }
+    
+            // Close the file
+            fclose(fp);
+
+
         while(1){
         printf("Enter your password:");
         scanf("%s",&password);
@@ -98,14 +138,18 @@ int main(){
         scanf("%s",&repass);
         if(strcmp(repass,password)==0)
         {
+            encrypt(password);
             printf("signed up successfully");
             user = fopen("user.csv", "a+") ;
-            fputs(",", user);
+            
             fputs(username, user) ;
             fputs(",", user);
-            fputs(password, user) ;   
-            fputs("\n", user) ;
+            fputs(password, user) ; 
+            fputs("\n", user) ; 
             fclose(user);
+            decrypt(password);
+            printf("%s",password);
+            
             break;
         }
         else{
