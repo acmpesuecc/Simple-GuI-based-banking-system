@@ -8,7 +8,7 @@ void encrypt(char *a)
         if(i%2==0)
         *a+=2*(l/2-i);
         else
-        *a-=2*(l/2+i);
+        *a+=4*(l/2+i);
         a++;i++;
     }
 }
@@ -20,7 +20,7 @@ void decrypt(char *a)
         if(i%2==0)
         *a-=2*(l/2-i);
         else
-        *a+=2*(l/2+i);
+        *a-=4*(l/2+i);
         a++;i++;
     }
 }
