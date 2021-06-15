@@ -1,141 +1,193 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include<string.h>
-int a;
-char username[32],password[12],repass[12],passcheck[12];
-FILE* user;   
-int logcheck;
-void login()
+#include<stdlib.h>
+
+void encrypt(char *a)
 {
-    printf("\n---------Welcome to the login page--------\nEnter your username: ");
-    scanf("%s",&username);        
+    int l=strlen(a);int i=0;
+    while(*a!='\0')
+    {
+        if(i%2==0)
+        *a+=2*(l/2-i);
+        else
+        *a+=3*(l/2-i);
+        if(*a==',')
+        *a='!';
+        a++;i++;
+    }
+}
+void decrypt(char *a)
+{
+    int l=strlen(a);int i=0;
+    while(*a!='\0')
+    {
+        if(*a=='!')
+        *a=',';
+        if(i%2==0)
+        *a-=2*(l/2-i);
+        else
+        *a-=3*(l/2-i);
+        a++;i++;
+    }
+}
+
+int check_user(char user[])
+{
     FILE* fp = fopen("user.csv", "r");
-    if (!fp)
-    printf("Can't open file\n");
-    
+    if (!fp)printf("File Empty\n");
     else 
     {
         char buffer[1024];
-        int row = 0;
-        int column = 0;
+        int row = 0,column=0;
         while (fgets(buffer,1024, fp)) 
         {
             column = 0;
             row++;
-
-                //avoid printing 1st row
-                if (row == 1)
-                    continue;
-    
-                // Splitting the data
-                char* value = strtok(buffer, ", ");
-    
-                while (value) 
-                {
-
-                    if(!strcmp(value,username))
-                    {
-                        value = strtok(NULL, ", ");
-                        column++;
-                        strcpy(passcheck,value);
-                        break;
-                    }
-                    value = strtok(NULL, ", ");
-                    
-                }
-               
-            }
-    
-            // Close the file
-            fclose(fp);
-
-            printf("Enter your password: ");
-            scanf("%s",&password);
-            char pass1[12];
-            for(int i=0;i<strlen(passcheck)-1;i++)pass1[i]=passcheck[i];
-            decrypt(pass1);
-            if(strcmp(password,pass1)==0)
-            {
-                printf("Successful");
-                logcheck=1;
-            } 
-            else 
-            printf("invalid");
-        }
-}
-int signup()
-{
-    rename:
-        printf("\n---------Welcome to the Sign up page--------\nEnter your username:");
-        scanf("%s",&username);
-        FILE* fp = fopen("user.csv", "r");
-        char buffer[1024];
-        int row = 0;
-        int column = 0;
-        while (fgets(buffer,1024, fp)) 
-        {
-            column = 0;
-            row++;
-            //avoid printing 1st row
-            if (row == 1)
-            continue;
-            // Splitting the data
+            if (row == 1)continue;
             char* value = strtok(buffer, ", ");
             while (value) 
             {
-                if(!strcmp(value,username))
-                {
-                    printf("username already taken");
-                    goto rename;
-                }
+                if (column == 0&&strcmp(user,value)==0)return 1;
+                else break;
                 value = strtok(NULL, ", ");
+                column++;
             }
+            //printf("");
         }
-        // Close the file
         fclose(fp);
-        while(1)
+    }
+    return 0;
+}
+
+void signup()
+{
+    char username[32],password[12],repass[12];
+    int balance;
+    user_start:
+    printf("\n---------Welcome to the Sign up page--------\nEnter your username: ");
+    scanf("%s",&username);
+    if(check_user(username))
+    {
+        printf("Username has already been taken!");
+        goto user_start;
+    }
+    pass_start:
+    printf("Enter your password:");
+    scanf("%s",&password);
+    if(strlen(password)<8)
+    {
+        printf("Enter a password greater than 8 characters!\n");
+        goto pass_start;
+    }
+    printf("Renter your password:");
+    scanf("%s",&repass);
+    if(strcmp(repass,password)==0)
+    {
+        FILE* fp = fopen("user.csv", "a+");
+        if (!fp) printf("Can't open file\n");
+        else
         {
-            printf("Enter your password:");
-            scanf("%s",&password);
-            //password should be greater than 8 digits for security
-            printf("Renter your password:");
-            scanf("%s",&repass);
-            if(strcmp(repass,password)==0)
-            {
-                encrypt(password);
-                printf("signed up successfully");
-                user = fopen("user.csv", "a+") ;
-                fputs(username, user) ;
-                fputs(",", user);
-                fputs(password, user) ; 
-                fputs("\n", user) ; 
-                fclose(user);
-                decrypt(password);
-                printf("%s",password);
-                break;
-            }
-            else
-            printf("try again by rentering the same password without spaces\n");
+            encrypt(password);
+            // printf("Enter bank balance in rupees: ");
+            // scanf("%d",&balance);
+            fprintf(fp, "%s,%s\n", username, password);
+            printf("\nNew Account added to record\n");
         }
+        
+        fclose(fp);
+    }
+    else
+    {
+        printf("Re-entered password doesn't work, please try again!");
+        goto pass_start;
+    }
+}
+
+int login_checker(char username[],char pass[])
+{
+    FILE* fp = fopen("user.csv", "r");
+  
+    if (!fp)
+    {
+        printf("File is empty!!\n");
+        return 0;
+    }
+    else 
+    {
+        char buffer[1024];
+        int row = 0,column=0;
+  
+        while (fgets(buffer,1024, fp)) 
+        {
+            column = 0;
+            row++;
+            if (row == 1)continue;
+  
+            char* value = strtok(buffer, ", ");
+  
+            while (value) 
+            {
+                if (column == 0 && strcmp(username,value)==0)
+                {
+                    value = strtok(NULL, ", ");
+                    strcpy(pass,value);
+                    return 1;
+                }
+
+                value = strtok(NULL, ", ");
+
+            }
+        }
+        fclose(fp);
+    }
+    return 0;
+}
+void login()
+{
+    char pass[12],username[20],password[12];
+    printf("\n---------Welcome to the login page--------\n");
+    user_start:
+    printf("Enter your username:");
+    scanf("%s",&username);
+    if(!login_checker(username,pass))
+    {
+        printf("Enter valid username!\n");
+        goto user_start;
+    }
+    pass_start:
+    printf("Enter your password:");
+    scanf("%s",&password);
+    decrypt(pass);
+    for(int i=0;i<strlen(pass)-1;i++)
+    {
+        if(strlen(pass)-1!=strlen(password))
+        {
+            printf("Enter valid password!\n");
+            goto pass_start;
+        }
+        if(password[i]!=pass[i])
+        {
+            printf("Enter valid password!\n");
+            goto pass_start;
+        }
+    }
+    printf("Login Successfull!!!!\n");
 }
 int main()
 {
     printf("------Welcome to PES's bank simulator------- \n (1)Login \n (2)Sign up\nEnter 1 or 2 respectfully\n");
     int a;
-    char username[32],password[12],repass[12],passcheck[12];
-    FILE* user;    
-    
     while(1)
     {
         scanf("%d",&a);
         if(a==1)
         {
-            printf("You will be directed to the login page");
+            printf("You will be directed to the login page.....");
             break;
         }
         else if(a==2)
         {
-            printf("You will be directed to the sign up page");
+            printf("You will be directed to the sign up page.....");
             break;
         }
         else
@@ -143,13 +195,10 @@ int main()
             printf("Enter your choice again as a 1 or 2\n");
         }
     }
-    if(a==1)
-    {
-        login();
-    }
-    else
-    {
-        signup();   
-    }
+    if(a==1){
+        login();}
+    else {
+        signup();
+        login();}
     return 0;
 }
