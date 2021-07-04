@@ -15,30 +15,30 @@ void encrypt(char *a)
     {
         if(i%4==0)
         {
-            n[i]=(a[i]^A[count]);
+            n[i]=(a[i]+A[count]);
             
         }
         else if(i%3==0)
         {
-            n[i]=(a[i]^C[count]);
+            n[i]=(a[i]+C[count]);
             
         }
         else if(i%2==0)
         {
-            n[i]=(a[i]^B[count]);
+            n[i]=(a[i]+B[count]);
             
         }
         else
         {
-            n[i]=(a[i]^D[count]);
+            n[i]=(a[i]+D[count]);
             
         }
-        if(n[i]=='\n')
+        /*if(n[i]=='\n')
         n[i]='!';
         else if(n[i]=='\t')
         n[i]='*';
         else if(n[i]==',')
-        n[i]='#';
+        n[i]='#';*/
         count++;
         if(count==5)
         count=0;
@@ -97,10 +97,11 @@ void decrypt(char *a)
         if((a[i]+2*i)==';')
         {
             l=i;
+            //printf("%d",l);
             break;
         }
     }
-    char n[l+1];
+    char n[l];
     int count=0;
     for(int i=0;i<l;i++)
     {
@@ -114,22 +115,22 @@ void decrypt(char *a)
         n[i]=' ';
         if(i%4==0)
         {
-            n[i]=(a[i]^A[count]);
+            n[i]=(a[i]-A[count]);
             
         }
         else if(i%3==0)
         {
-            n[i]=(a[i]^C[count]);
+            n[i]=(a[i]-C[count]);
             
         }
         else if(i%2==0)
         {
-            n[i]=(a[i]^B[count]);
+            n[i]=(a[i]-B[count]);
             
         }
         else
         {
-            n[i]=(a[i]^D[count]);
+            n[i]=(a[i]-D[count]);
             
         }
         count++;
@@ -140,5 +141,4 @@ void decrypt(char *a)
     //printf("%s",n);
     strcpy(a,n);
 }
-
 
