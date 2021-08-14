@@ -141,12 +141,3 @@ void decrypt(char *a)
     //printf("%s",n);
     strcpy(a,n);
 }
-int main()
-{
-    char c[]="CLAUDIUS";
-    encrypt(c);
-    printf("%s\n",c);
-    decrypt(c);
-    printf("%s\n",c);
-}
-
