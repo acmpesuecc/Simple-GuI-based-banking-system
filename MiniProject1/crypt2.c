@@ -33,12 +33,12 @@ void encrypt(char *a)
             n[i]=(a[i]+D[count]);
             
         }
-        /*if(n[i]=='\n')
+        if(n[i]=='\n')
         n[i]='!';
         else if(n[i]=='\t')
         n[i]='*';
         else if(n[i]==',')
-        n[i]='#';*/
+        n[i]='#';
         count++;
         if(count==5)
         count=0;
