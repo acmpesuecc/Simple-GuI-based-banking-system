@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="greet_main_window">
+    <property name="width-request">860</property>
+    <property name="height-request">350</property>
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Bank Application</property>
+    <property name="window-position">center</property>
+    <property name="icon">../images/icons/dashboard/main_bank.svg</property>
+    <property name="gravity">center</property>
+    <property name="startup-id">bank-appliication</property>
+    <signal name="destroy" handler="win_destroy" swapped="no"/>
+    <child>
+      <object class="GtkPaned" id="greet_pane">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="position">250</property>
+        <property name="position-set">True</property>
+        <child>
+          <object class="GtkFixed" id="greet_pane_welcome">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkLabel" id="lbl_greet_welcome">
+                <property name="width-request">195</property>
+                <property name="height-request">177</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Welcome
+to
+Bank</property>
+                <attributes>
+                  <attribute name="font-desc" value="Segoe UI Semilight, Semi-Light 32"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">28</property>
+                <property name="y">79</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">False</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkNotebook" id="greet_notebook">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <child>
+              <object class="GtkFixed" id="fixed_layout_login">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="btn_login">
+                    <property name="label" translatable="yes">Login</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_btn_login_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">383</property>
+                    <property name="y">264</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_login_username">
+                    <property name="width-request">360</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/account-circle.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Enter Username</property>
+                    <property name="placeholder-text" translatable="yes">Enter Username</property>
+                    <property name="input-purpose">name</property>
+                  </object>
+                  <packing>
+                    <property name="x">46</property>
+                    <property name="y">79</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_password">
+                    <property name="width-request">360</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="visibility">False</property>
+                    <property name="invisible-char">•</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/vpn-key.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Enter Password</property>
+                    <property name="placeholder-text" translatable="yes">Enter Password</property>
+                    <property name="input-purpose">password</property>
+                  </object>
+                  <packing>
+                    <property name="x">46</property>
+                    <property name="y">159</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_exit">
+                    <property name="label" translatable="yes">Exit</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_btn_exit_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">493</property>
+                    <property name="y">264</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_username_err">
+                    <property name="width-request">110</property>
+                    <property name="height-request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Invalid Username or 
+User does not exist</property>
+                    <attributes>
+                      <attribute name="foreground" value="#eded33333b3b"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">415</property>
+                    <property name="y">79</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_login_pass_errr">
+                    <property name="width-request">88</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Invalid Password</property>
+                    <attributes>
+                      <attribute name="foreground" value="#eded33333b3b"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">415</property>
+                    <property name="y">167</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="lbl_greet_login">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Log into existing Account</property>
+              </object>
+              <packing>
+                <property name="tab-fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="fixed_create_greet">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkButton" id="btn_greet_create_user">
+                    <property name="label" translatable="yes">Create new account</property>
+                    <property name="width-request">165</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_btn_greet_create_user_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">324</property>
+                    <property name="y">263</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_new_username">
+                    <property name="width-request">300</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/account-circle.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Enter Account Holder Name</property>
+                    <property name="placeholder-text" translatable="yes">Enter Account Holder Name</property>
+                    <signal name="changed" handler="on_entry_new_username_changed" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">13</property>
+                    <property name="y">11</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinner" id="spin_check">
+                    <property name="width-request">30</property>
+                    <property name="height-request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="x">324</property>
+                    <property name="y">11</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_new_password">
+                    <property name="width-request">300</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="visibility">False</property>
+                    <property name="invisible-char">•</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/vpn-key.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Enter Password</property>
+                    <property name="placeholder-text" translatable="yes">Enter Password</property>
+                    <property name="input-purpose">password</property>
+                    <signal name="changed" handler="on_entry_new_password_changed" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">13</property>
+                    <property name="y">51</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkProgressBar" id="pass_progress">
+                    <property name="width-request">300</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="x">12</property>
+                    <property name="y">90</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_new_retype_password">
+                    <property name="width-request">300</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="visibility">False</property>
+                    <property name="invisible-char">•</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/vpn-key.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Retype Password</property>
+                    <property name="placeholder-text" translatable="yes">Re-Type Password</property>
+                    <property name="input-purpose">password</property>
+                    <signal name="changed" handler="on_entry_new_retype_password_changed" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">13</property>
+                    <property name="y">100</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_new_email">
+                    <property name="width-request">300</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/email.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Enter Email Address</property>
+                    <property name="placeholder-text" translatable="yes">Enter E-mail address</property>
+                    <property name="input-purpose">email</property>
+                  </object>
+                  <packing>
+                    <property name="x">13</property>
+                    <property name="y">139</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="enter_new_mobno">
+                    <property name="width-request">300</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="max-length">10</property>
+                    <property name="primary-icon-pixbuf">../images/icons/svg-dark/call.svg</property>
+                    <property name="primary-icon-tooltip-text" translatable="yes">Enter Mobile Number</property>
+                    <property name="placeholder-text" translatable="yes">Enter Mobile Number</property>
+                    <property name="input-purpose">phone</property>
+                    <signal name="changed" handler="on_enter_new_mobno_changed" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">13</property>
+                    <property name="y">178</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_exit_create">
+                    <property name="label" translatable="yes">Exit</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_btn_exit_create_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">499</property>
+                    <property name="y">263</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_strong">
+                    <property name="width-request">90</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Strong Password!</property>
+                    <attributes>
+                      <attribute name="foreground" value="#2e2ec2c27e7e"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">319</property>
+                    <property name="y">57</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="img_user_valid">
+                    <property name="width-request">30</property>
+                    <property name="height-request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Valid Username!</property>
+                    <property name="stock">gtk-apply</property>
+                  </object>
+                  <packing>
+                    <property name="x">319</property>
+                    <property name="y">11</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkImage" id="retype_success">
+                    <property name="width-request">30</property>
+                    <property name="height-request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="stock">gtk-apply</property>
+                  </object>
+                  <packing>
+                    <property name="x">320</property>
+                    <property name="y">100</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="retype_err">
+                    <property name="width-request">131</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Passwords do not match!</property>
+                    <attributes>
+                      <attribute name="foreground" value="#eded33333b3b"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">319</property>
+                    <property name="y">104</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_weak">
+                    <property name="width-request">84</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Weak Password!</property>
+                    <attributes>
+                      <attribute name="foreground" value="#eded33333b3b"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">318</property>
+                    <property name="y">57</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_user_exists">
+                    <property name="width-request">101</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">User Already Exists!</property>
+                    <attributes>
+                      <attribute name="foreground" value="#eded33333b3b"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">318</property>
+                    <property name="y">17</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_create_mob_err">
+                    <property name="width-request">193</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Enter a Valid Mobile Number</property>
+                    <attributes>
+                      <attribute name="foreground" value="#e0e01b1b2424"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">321</property>
+                    <property name="y">184</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="lbl_greet_create">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Create a new Account</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab-fill">False</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="resize">True</property>
+            <property name="shrink">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="pass_hint">
+    <property name="width-request">100</property>
+    <property name="height-request">90</property>
+    <property name="can-focus">False</property>
+    <property name="relative-to">entry_new_password</property>
+    <property name="position">right</property>
+    <property name="modal">False</property>
+    <child>
+      <object class="GtkFixed" id="pass_layout">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel" id="pass_format">
+            <property name="width-request">258</property>
+            <property name="height-request">61</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Password must be 8-12 characters long.
+Password must contain:
+	• Combination of alphabets and numbers
+	• Atleast one special character</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
