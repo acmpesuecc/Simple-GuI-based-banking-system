@@ -5,12 +5,10 @@
 The above project comprises of Account Handling and related transactions such as NEFT, debit, credit, Balance enquiry, UPI related transactions using file handling equipped with necessary encryption and ensuring data protection.
 
 ### Project Objectives
-Functions to add in the project: 
 
-1. [ ] Project Synopsis
-2. [ ] File encryption/decryption (Assigned to clouds)
+1. [x] File encryption/decryption (Assigned to clouds)
 
-3. [ ] Storing data in files.
+2. [x] Storing data in files.
 
    The following must be in the file:
    
@@ -22,7 +20,7 @@ Functions to add in the project:
    6. UPI password
 
 
-4. [ ] Withdraw money. 
+3. [x] Withdraw money. 
 
    Options to add:
    
@@ -32,13 +30,7 @@ Functions to add in the project:
    4. UPI
 
 
-5. [ ] Account management
+4. [x] Account management
    User must be able to:
    1. Change name, password, etc.
    2. Change UPI handler/change UPI password
-
-6. [ ] Project management (not for mini project 1)
-   Makefile
-   
-7. [ ] Project Design
-   Reading data from decrypted file (Assigned ro Frail)
