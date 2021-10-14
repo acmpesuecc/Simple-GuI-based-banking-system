@@ -6,7 +6,7 @@ The above project comprises of Account Handling and related transactions such as
 
 ### Project Objectives
 
-1. [x] File encryption/decryption (Assigned to clouds)
+1. [x] File encryption/decryption 
 
 2. [x] Storing data in files.
 
