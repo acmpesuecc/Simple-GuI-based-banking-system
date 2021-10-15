@@ -34,3 +34,5 @@ The above project comprises of Account Handling and related transactions such as
    User must be able to:
    1. Change name, password, etc.
    2. Change UPI handler/change UPI password
+
+THE GUI part, get glade installed and running using the msys2 terminal
