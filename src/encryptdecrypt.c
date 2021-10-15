@@ -81,7 +81,6 @@ void decrypt(char *a)
         if((a[i]+2*i)==';')
         {
             l=i;
-            //printf("%d",l);
             break;
         }
     }
