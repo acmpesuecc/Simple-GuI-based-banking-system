@@ -36,3 +36,4 @@ The above project comprises of Account Handling and related transactions such as
    2. Change UPI handler/change UPI password
 
 THE GUI part, get glade installed and running using the msys2 terminal
+https://packages.msys2.org/package/mingw-w64-x86_64-glade
