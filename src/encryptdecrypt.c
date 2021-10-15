@@ -1,6 +1,11 @@
 #include<string.h>
 #include<stdio.h>
 
+char A[]="LOREM";
+char B[]="IPSUM";
+char C[]="CONSE";
+char D[]="CRATO";
+
 void encrypt(char *a)
 {
    char n[40];
